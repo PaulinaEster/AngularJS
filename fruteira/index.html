@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fruteira" >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="lib/angular.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  
+  <script>
+    angular.module("fruteira", []);
+    angular.module("fruteira").controller("fruteiraCtrl", ($scope) => {
+      $scope.title = "Fruteira";
+
+      $scope.frutas = [
+        { nome: "maca", qntd: 1 },
+        { nome: "abacate", qntd: 5 },
+        { nome: "melancia", qntd: 6 },
+        { nome: "pera", qntd: 20 },
+      ];
+    });
+
+  </script>
+
+
+</head>
+<body ng-controller="fruteiraCtrl" >
+  <h3 class="jumbroton"> {{title}} </h3>
+  <ul ng-repeat="fruta in frutas">
+    <li ng-repeat="(key, value) in fruta">
+      {{value}} 
+    </li>
+  </ul>
+
+</body>
+</html>
